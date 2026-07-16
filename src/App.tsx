@@ -23,7 +23,8 @@ import {
   Sliders,
   Award,
   Filter,
-  CheckCircle2
+  CheckCircle2,
+  Smartphone
 } from 'lucide-react';
 
 import { Article, SubjectCategory, SubjectPreferences, StudyStats } from './types';
@@ -341,9 +342,14 @@ export default function App() {
               onClick={() => { setActiveTab('feed'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               className="p-3 hover:bg-x-text/10 rounded-full transition-colors duration-200 cursor-pointer text-x-text xl:ml-2 flex items-center space-x-3.5"
             >
-              <GraduationCap size={32} className="text-x-blue" />
+              <div className="relative w-8 h-8 flex items-center justify-center shrink-0">
+                <Smartphone size={32} className="text-x-blue stroke-[2px]" />
+                <div className="absolute inset-0 flex items-center justify-center mt-[-1px]">
+                  <GraduationCap size={14} className="text-x-blue stroke-[2px]" />
+                </div>
+              </div>
               <span className="hidden xl:inline font-black text-2xl tracking-tighter text-x-text">
-                Doomschool
+                doomschooler
               </span>
             </div>
 
@@ -406,12 +412,12 @@ export default function App() {
 
           {/* Scholars Profile Module */}
           <div className="flex items-center space-x-3 p-2.5 rounded-full hover:bg-x-text/[0.08] transition-colors duration-150 cursor-pointer xl:ml-1 mb-2">
-            <div className="w-10 h-10 rounded-full bg-x-blue text-white flex items-center justify-center font-black text-sm shrink-0 border border-x-border">
-              SD
+            <div className="w-10 h-10 rounded-full bg-x-blue text-white flex items-center justify-center shrink-0 border border-x-border">
+              <Smartphone size={20} className="stroke-[2px]" />
             </div>
             <div className="hidden xl:flex flex-col leading-tight min-w-0 flex-1">
-              <span className="font-bold text-[14px] text-x-text truncate">sdbtg24</span>
-              <span className="text-[12.5px] text-x-muted truncate">@sdbtg24_edu</span>
+              <span className="font-bold text-[14px] text-x-text truncate">doomerschooler</span>
+              <span className="text-[12.5px] text-x-muted truncate">@doomschooler</span>
             </div>
           </div>
         </aside>
