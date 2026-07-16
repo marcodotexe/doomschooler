@@ -1,0 +1,6 @@
+{
+  "name": "Doomschooler",
+  "description": "An endless, scrollable social-media-style feed for academic content from Simple Wikipedia, with client-side category recommendations, subject filters, and engaging study metrics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

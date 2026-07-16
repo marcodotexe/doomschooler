@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --x-bg: #FFFFFF;
+  --x-secondary: #F7F9F9;
+  --x-border: #EFF3F4;
+  --x-text: #0F1419;
+  --x-muted: #536471;
+  --x-blue: #1D9BF0;
+  --x-blue-hover: #1A8CD8;
+  --x-pink: #F91880;
+  --x-green: #00BA7C;
+}
+
+.dark {
+  --x-bg: #000000;
+  --x-secondary: #16181C;
+  --x-border: #2F3336;
+  --x-text: #E7E9EA;
+  --x-muted: #71767B;
+}
+
+@theme {
+  --font-sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-x-bg: var(--x-bg);
+  --color-x-secondary: var(--x-secondary);
+  --color-x-border: var(--x-border);
+  --color-x-text: var(--x-text);
+  --color-x-muted: var(--x-muted);
+  --color-x-blue: var(--x-blue);
+  --color-x-blue-hover: var(--x-blue-hover);
+  --color-x-pink: var(--x-pink);
+  --color-x-green: var(--x-green);
+}
+
+body {
+  background-color: var(--x-bg);
+  color: var(--x-text);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom scrollbars for a clean social media experience */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #2f3336;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d9bf0;
+}
