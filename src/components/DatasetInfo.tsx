@@ -212,19 +212,19 @@ def process_wikipedia_dump(xml_path, output_json_path):
   };
 
   return (
-    <div className="w-full bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800/80 rounded-2xl p-6 shadow-sm flex flex-col space-y-6">
+    <div className="w-full bg-x-bg border border-x-border rounded-2xl p-6 shadow-sm flex flex-col space-y-6 text-x-text">
       
       {/* Header */}
-      <div className="flex items-center space-x-2.5 text-zinc-800 dark:text-zinc-100 border-b border-zinc-100 dark:border-zinc-800/40 pb-4">
-        <BookOpen size={20} className="text-zinc-700 dark:text-zinc-300" />
+      <div className="flex items-center space-x-2.5 text-x-text border-b border-x-border pb-4">
+        <BookOpen size={20} className="text-x-text/80" />
         <div>
           <h3 className="font-bold text-base tracking-tight">Academic Dataset Pipeline</h3>
-          <p className="text-xs text-zinc-400 dark:text-zinc-500">How Doomschooler curates knowledge</p>
+          <p className="text-xs text-x-muted">How Doomschooler curates knowledge</p>
         </div>
       </div>
 
       {/* Info Overview */}
-      <div className="space-y-3 text-zinc-600 dark:text-zinc-300 text-sm leading-relaxed">
+      <div className="space-y-3 text-x-text/90 text-sm leading-relaxed">
         <p>
           Doomschooler runs entirely in your browser using a pre-filtered list of academic articles across STEM, humanities, and social sciences. 
           To filter out pop culture, entertainment, celebrities, and trivia, we utilize a <strong>whitelist of academic category trees</strong>.
@@ -235,13 +235,13 @@ def process_wikipedia_dump(xml_path, output_json_path):
       </div>
 
       {/* Topic Preferences Settings (Enable/Disable toggles) */}
-      <div className="bg-zinc-50 dark:bg-zinc-800/20 border border-zinc-100 dark:border-zinc-800/60 rounded-xl p-5 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-zinc-100 dark:border-zinc-800/40 pb-3 gap-2">
+      <div className="bg-x-secondary border border-x-border rounded-xl p-5 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-x-border pb-3 gap-2">
           <div className="flex items-center space-x-2">
             <Settings2 size={18} className="text-x-blue" />
             <div>
-              <h4 className="text-sm font-bold text-zinc-800 dark:text-zinc-100">Topic Subscription Settings</h4>
-              <p className="text-xs text-zinc-400 dark:text-zinc-500">Toggle curriculum topics on and off so that only enabled topics show on your feed.</p>
+              <h4 className="text-sm font-bold text-x-text">Topic Subscription Settings</h4>
+              <p className="text-xs text-x-muted">Toggle curriculum topics on and off so that only enabled topics show on your feed.</p>
             </div>
           </div>
           <div className="flex space-x-2 self-start sm:self-auto">
@@ -251,7 +251,7 @@ def process_wikipedia_dump(xml_path, output_json_path):
                   if (preferences[cat].excluded) onToggleExclude(cat);
                 });
               }}
-              className="px-2.5 py-1 text-[11px] font-bold bg-zinc-200 dark:bg-zinc-850 hover:bg-zinc-300 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-350 rounded transition-colors cursor-pointer"
+              className="px-2.5 py-1 text-[11px] font-bold bg-x-bg hover:bg-x-secondary text-x-text border border-x-border rounded transition-colors cursor-pointer"
             >
               Enable All
             </button>
@@ -261,7 +261,7 @@ def process_wikipedia_dump(xml_path, output_json_path):
                   if (!preferences[cat].excluded) onToggleExclude(cat);
                 });
               }}
-              className="px-2.5 py-1 text-[11px] font-bold bg-zinc-200 dark:bg-zinc-850 hover:bg-zinc-300 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-350 rounded transition-colors cursor-pointer"
+              className="px-2.5 py-1 text-[11px] font-bold bg-x-bg hover:bg-x-secondary text-x-text border border-x-border rounded transition-colors cursor-pointer"
             >
               Disable All
             </button>
@@ -280,8 +280,8 @@ def process_wikipedia_dump(xml_path, output_json_path):
                 key={cat}
                 className={`flex items-start p-4 rounded-xl border transition-all duration-200 ${
                   isEnabled
-                    ? 'bg-white dark:bg-zinc-900 border-zinc-200/60 dark:border-zinc-800/85 shadow-sm'
-                    : 'bg-zinc-100/40 dark:bg-zinc-950/20 border-zinc-200/20 dark:border-zinc-900/40 opacity-60'
+                    ? 'bg-x-bg border-x-border shadow-sm'
+                    : 'bg-x-secondary/40 border-x-border/40 opacity-60'
                 }`}
               >
                 {/* Icon on the left */}
@@ -292,13 +292,13 @@ def process_wikipedia_dump(xml_path, output_json_path):
                 {/* Content on the right */}
                 <div className="flex-1 min-w-0 flex flex-col justify-between">
                   {/* Topic name spans full width of this block */}
-                  <span className="font-extrabold text-[14px] text-zinc-800 dark:text-zinc-200 block truncate" title={cat}>
+                  <span className="font-extrabold text-[14px] text-x-text block truncate" title={cat}>
                     {cat}
                   </span>
 
                   {/* Status & Toggle switch placed underneath */}
-                  <div className="flex items-center justify-between mt-3 pt-2 border-t border-zinc-100 dark:border-zinc-800/45">
-                    <span className="text-[10px] text-zinc-400 dark:text-zinc-500 font-bold uppercase tracking-wider">
+                  <div className="flex items-center justify-between mt-3 pt-2 border-t border-x-border">
+                    <span className="text-[10px] text-x-muted font-bold uppercase tracking-wider">
                       {isEnabled ? 'Enabled' : 'Disabled'}
                     </span>
 
@@ -306,7 +306,7 @@ def process_wikipedia_dump(xml_path, output_json_path):
                     <button
                       onClick={() => onToggleExclude(cat)}
                       className={`relative inline-flex h-4.5 w-8.5 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-                        isEnabled ? 'bg-x-blue' : 'bg-zinc-300 dark:bg-zinc-700'
+                        isEnabled ? 'bg-x-blue' : 'bg-x-secondary border-x-border'
                       }`}
                       aria-label={`Toggle ${cat}`}
                     >
@@ -328,20 +328,20 @@ def process_wikipedia_dump(xml_path, output_json_path):
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-2">
         
         {/* Left Side: Pipeline Custom Import */}
-        <div className="space-y-4 bg-zinc-50 dark:bg-zinc-800/30 p-5 border border-zinc-100 dark:border-zinc-800/60 rounded-xl">
+        <div className="space-y-4 bg-x-secondary p-5 border border-x-border rounded-xl">
           <div className="flex items-center justify-between">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 flex items-center space-x-1.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-x-muted flex items-center space-x-1.5">
               <Upload size={14} />
               <span>Import Custom JSON Dataset</span>
             </h4>
             <button
               onClick={handleLoadSample}
-              className="text-[11px] text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 underline"
+              className="text-[11px] text-x-blue hover:underline"
             >
               Load Sample
             </button>
           </div>
-          <p className="text-xs text-zinc-400 dark:text-zinc-500">
+          <p className="text-xs text-x-muted">
             Paste a custom JSON array of academic posts to supplement or replace the feed. 
             All imported articles are saved to your offline-capable browser database.
           </p>
@@ -350,13 +350,13 @@ def process_wikipedia_dump(xml_path, output_json_path):
             value={jsonInput}
             onChange={(e) => setJsonInput(e.target.value)}
             placeholder='Paste your JSON array of articles here...'
-            className="w-full h-36 p-3 text-xs font-mono bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg focus:outline-none focus:ring-1 focus:ring-zinc-400 text-zinc-700 dark:text-zinc-300"
+            className="w-full h-36 p-3 text-xs font-mono bg-x-bg border border-x-border rounded-lg focus:outline-none focus:ring-1 focus:ring-x-blue text-x-text placeholder:text-x-muted/50"
           />
 
           <div className="flex items-center justify-between">
             <button
               onClick={handleJsonImport}
-              className="px-4 py-2 text-xs font-bold bg-zinc-900 hover:bg-zinc-800 dark:bg-zinc-100 dark:hover:bg-zinc-200 text-white dark:text-zinc-900 rounded-lg flex items-center space-x-1 shadow transition-all"
+              className="px-4 py-2 text-xs font-bold bg-x-blue hover:bg-x-blue-hover text-white rounded-lg flex items-center space-x-1 shadow transition-all"
             >
               <span>Import Dataset</span>
               <ArrowRight size={13} />
@@ -364,7 +364,7 @@ def process_wikipedia_dump(xml_path, output_json_path):
 
             {customCount > 0 && (
               <div className="flex items-center space-x-2 text-xs">
-                <span className="text-zinc-400 dark:text-zinc-500">{customCount} Custom Sourced</span>
+                <span className="text-x-muted">{customCount} Custom Sourced</span>
                 <button
                   onClick={onClearCustom}
                   className="text-red-500 hover:underline"
@@ -376,13 +376,13 @@ def process_wikipedia_dump(xml_path, output_json_path):
           </div>
 
           {importError && (
-            <div className="p-3 bg-red-50 dark:bg-red-950/15 border border-red-100 dark:border-red-900/30 text-xs text-red-600 dark:text-red-400 rounded-lg">
+            <div className="p-3 bg-red-55/10 dark:bg-red-950/15 border border-red-500/20 text-xs text-red-600 dark:text-red-400 rounded-lg">
               {importError}
             </div>
           )}
 
           {importSuccess && (
-            <div className="p-3 bg-emerald-50 dark:bg-emerald-950/15 border border-emerald-100 dark:border-emerald-900/30 text-xs text-emerald-600 dark:text-emerald-400 rounded-lg">
+            <div className="p-3 bg-emerald-55/10 dark:bg-emerald-950/15 border border-emerald-500/20 text-xs text-emerald-600 dark:text-emerald-400 rounded-lg">
               {importSuccess}
             </div>
           )}
@@ -391,22 +391,22 @@ def process_wikipedia_dump(xml_path, output_json_path):
         {/* Right Side: process_data.py Guide */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 flex items-center space-x-1.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-x-muted flex items-center space-x-1.5">
               <FileCode2 size={14} />
               <span>Offline Pipeline Script</span>
             </h4>
             <button
               onClick={copyToClipboard}
-              className="text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 flex items-center space-x-1"
+              className="text-xs text-x-muted hover:text-x-text flex items-center space-x-1"
             >
               {copiedScript ? <Check size={12} className="text-emerald-500" /> : <Copy size={12} />}
               <span>{copiedScript ? 'Copied' : 'Copy Python Code'}</span>
             </button>
           </div>
-          <p className="text-xs text-zinc-400 dark:text-zinc-500">
+          <p className="text-xs text-x-muted">
             Use this Python 3 script locally to parse Wikipedia XML dumps and automatically compile an educational, high-density JSON file:
           </p>
-          <div className="bg-zinc-50 dark:bg-zinc-950 p-4 border border-zinc-100 dark:border-zinc-800 rounded-xl overflow-x-auto max-h-56 font-mono text-[10px] leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <div className="bg-x-secondary p-4 border border-x-border rounded-xl overflow-x-auto max-h-56 font-mono text-[10px] leading-relaxed text-x-muted">
             <pre>{pythonScript}</pre>
           </div>
         </div>
